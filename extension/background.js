@@ -15,15 +15,20 @@ chrome.runtime.onMessage.addListener(request => {
     }
 })
 
-chrome.webNavigation.onCommitted.addListener((info) => {
-    if(info.transitionType == "reload" && options.btnPath != "") {
-        clickBtn(tabID, options.btnPath, options.btnClickTime);
-    }
-});
+// chrome.webNavigation.onCommitted.addListener((info) => {
+//     if(info.transitionType == "reload" && options.btnPath != "") {
+//         clickBtn(tabID, options.btnPath, options.btnClickTime);
+//     }
+// });
 
 const refresh = (id) => {
     ref = setInterval(() => {
-        clickBtn(tabID, options.btnPath, options.btnClickTime)
+//         clickBtn(tabID, options.btnPath, options.btnClickTime)
+        chrome.webNavigation.onCommitted.addListener((info) => {
+            if(info.transitionType == "reload" && options.btnPath != "") {
+                clickBtn(tabID, options.btnPath, options.btnClickTime);
+            }
+        });
         chrome.tabs.reload(id)
     }, options.webRefreshTime);
 }
