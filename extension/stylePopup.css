@@ -1,0 +1,73 @@
+.body, html {
+    background-color: #404040;
+}
+
+h2 {
+    font-size: 25px;
+    color: #E7E5E4;
+}
+
+.container {
+    width: 280px;
+    height: 300px;
+}
+
+.textBox {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.boxItems {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 16px;
+    color: white;
+}
+
+input {
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    width: 180px;
+    height: 25px;
+    outline: none;
+    background-color: #E7E5E4;
+}
+
+.buttonBox {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+    background-color: #E7E5E4;
+    cursor: pointer;
+}
+
+/* .stopBtn {
+    background-color: #ff4757;
+}
+
+.startBtn {
+    background-color: #2ed573;
+} */
