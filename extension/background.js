@@ -38,21 +38,23 @@ const stopRef = () => {
 }
 
 const clickBtn = (id, path, timer) => {
-    chrome.scripting.executeScript(
-        {
-        args: [path, timer],
-        target: { tabId: id },
-        func: (arg1,  arg2) => {
-            let element = document.evaluate(
-                arg1,
-                document,
-                null,
-                XPathResult.FIRST_ORDERED_NODE_TYPE,
-                null,
-            ).singleNodeValue
-            setInterval(() => {
-                element.click()
-            }, arg2)
-        }
-    })
+    if(Object..keys(options).length != 0) {
+        chrome.scripting.executeScript(
+            {
+            args: [path, timer],
+            target: { tabId: id },
+            func: (arg1,  arg2) => {
+                let element = document.evaluate(
+                    arg1,
+                    document,
+                    null,
+                    XPathResult.FIRST_ORDERED_NODE_TYPE,
+                    null,
+                ).singleNodeValue
+                setInterval(() => {
+                    element.click()
+                }, arg2)
+            }
+        })
+    }
 }
